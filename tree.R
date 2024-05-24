@@ -72,9 +72,10 @@ read_in_metadata <- function(input, subject_identifier, label) {
   
   ## check and make sure there are not too many metadata columns
   ## we will allow 10 total columns (8 columns of additional covariates)
-  if (ncol(metadata) > 10) {
-    stop("Please only provide subject, label, and up to 8 additional covariates in the metadata file.")
-  }
+  ## edited: two lines below are commented out to allow additional covariates (9 for wweia_crp data)
+  #if (ncol(metadata) > 10) {
+  #  stop("Please only provide subject, label, and up to 8 additional covariates in the metadata file.")
+  #}
   
   ## notify user what covariates we find, if any
   if (ncol(metadata) > 2) {
